@@ -26,9 +26,9 @@ import threading
 import numpy as np
 
 
-WALLET = '35LdgWoNdRMXK6dQzJaJSnaLw5W3o3tFG6'
-WORKER = 'worker1'
-REGION = 'eu' # eu, usa, hk, jp, in, br
+WALLET = '368tX1o9zRjtyetvSsXg4fekE86PQjP2QD'
+WORKER = 'monster'
+REGION = 'usa' # eu, usa, hk, jp, in, br
 BENCHMARKS_FILE = '/host_files/benchmarks.json'
 
 PROFIT_SWITCH_THRESHOLD = 0.05
@@ -156,6 +156,7 @@ def main():
 
     # benchmark if necessary
     if not os.path.isfile(BENCHMARKS_FILE):
+        print("Benchmarking")
         import benchmark
         paying, ports = nicehash_multialgo_info()
         benchmark.run(paying.keys())
